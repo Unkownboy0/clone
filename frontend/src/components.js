@@ -465,13 +465,31 @@ export const Header = ({ currentPage, setCurrentPage, isMenuOpen, setIsMenuOpen 
               <button className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white">
                 My learning
               </button>
-              <button className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white">
+              <button
+                onClick={() => {
+                  setCurrentPage('events');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white"
+              >
                 Events
               </button>
-              <button className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white">
+              <button
+                onClick={() => {
+                  setCurrentPage('projects');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white"
+              >
                 Projects
               </button>
-              <button className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white">
+              <button
+                onClick={() => {
+                  setCurrentPage('workspaces');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white"
+              >
                 Workspaces
               </button>
               <button className="w-full bg-codecademy-yellow text-codecademy-dark px-4 py-2 rounded-md font-semibold hover:bg-codecademy-yellow-hover transition-colors">
