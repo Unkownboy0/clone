@@ -9,6 +9,7 @@ import {
   TestimonialsSection,
   CourseFilters,
   CourseCard,
+  SkillsSection,
   mockCourses
 } from './components';
 import { motion, AnimatePresence } from 'framer-motion';
