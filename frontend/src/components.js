@@ -470,66 +470,185 @@ export const Header = ({ currentPage, setCurrentPage, isMenuOpen, setIsMenuOpen 
   );
 };
 
-// Footer Component - Dark Theme
+// Footer Component - Complete Codecademy Style
 export const Footer = () => {
   return (
     <footer className="bg-codecademy-darker text-text-light-gray border-t border-border-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
-                <Code className="w-5 h-5 text-codecademy-dark" />
-              </div>
-              <span className="text-xl font-bold text-white">
-                codecademy
-              </span>
-            </div>
-            <p className="text-text-medium-gray text-sm">
-              Learn to code for free with millions of students worldwide.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-white mb-4">Subjects</h3>
-            <ul className="space-y-2 text-sm text-text-medium-gray">
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Web Development</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Data Science</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Computer Science</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Developer Tools</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Machine Learning</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-white mb-4">Languages</h3>
-            <ul className="space-y-2 text-sm text-text-medium-gray">
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">HTML & CSS</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Python</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">JavaScript</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Java</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">C++</a></li>
-            </ul>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          
+          {/* Company */}
           <div>
             <h3 className="font-semibold text-white mb-4">Company</h3>
-            <ul className="space-y-2 text-sm text-text-medium-gray">
+            <ul className="space-y-3 text-sm">
               <li><a href="#" className="hover:text-codecademy-yellow transition-colors">About</a></li>
               <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Affiliates</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Press</a></li>
-              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Partnerships</a></li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Resources</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Articles</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Cheatsheets</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Code challenges</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Docs</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Projects</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Videos</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Workspaces</a></li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Support</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Help Center</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Give feedback</a></li>
+            </ul>
+            
+            <h3 className="font-semibold text-white mb-4 mt-8">Plans</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">For individuals</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">For students</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">For business</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Discounts</a></li>
+            </ul>
+          </div>
+
+          {/* Community */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Community</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Visit community</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Code Crew</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Events</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Learner Stories</a></li>
+            </ul>
+          </div>
+
+          {/* Subjects */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Subjects</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">AI</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Cloud computing</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Code foundations</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Computer science</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Cybersecurity</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Data analytics</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Data science</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Data visualization</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Developer tools</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">DevOps</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Game development</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">IT</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Machine learning</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Math</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Mobile development</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Web design</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Web development</a></li>
+            </ul>
+          </div>
+
+          {/* Languages */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Languages</h3>
+            <ul className="space-y-3 text-sm">
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Bash</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">C</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">C++</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">C#</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Go</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">HTML & CSS</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Java</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">JavaScript</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Kotlin</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">PHP</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Python</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">R</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Ruby</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">SQL</a></li>
+              <li><a href="#" className="hover:text-codecademy-yellow transition-colors">Swift</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border-gray mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text-medium-gray">
-          <p>&copy; 2024 Codecademy. All rights reserved.</p>
-          <div className="flex items-center space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-codecademy-yellow transition-colors">Privacy</a>
-            <a href="#" className="hover:text-codecademy-yellow transition-colors">Terms</a>
-            <a href="#" className="hover:text-codecademy-yellow transition-colors">Cookies</a>
+        {/* Career Building Section */}
+        <div className="border-t border-border-gray mt-12 pt-8">
+          <div className="mb-8">
+            <h3 className="font-semibold text-white mb-4">Career building</h3>
+            <div className="flex flex-wrap gap-6 text-sm">
+              <a href="#" className="hover:text-codecademy-yellow transition-colors">Career paths</a>
+              <a href="#" className="hover:text-codecademy-yellow transition-colors">Career Center</a>
+              <a href="#" className="hover:text-codecademy-yellow transition-colors">Interview prep</a>
+              <a href="#" className="hover:text-codecademy-yellow transition-colors">Professional certification</a>
+            </div>
+          </div>
+
+          {/* Additional Links */}
+          <div className="border-t border-border-gray pt-8 mb-8">
+            <div className="flex flex-wrap gap-6 text-sm">
+              <a href="#" className="hover:text-codecademy-yellow transition-colors">Full catalog</a>
+              <a href="#" className="hover:text-codecademy-yellow transition-colors">Beta content</a>
+              <a href="#" className="hover:text-codecademy-yellow transition-colors">Roadmap</a>
+            </div>
+          </div>
+
+          {/* Mobile Apps */}
+          <div className="border-t border-border-gray pt-8 mb-8">
+            <h3 className="font-semibold text-white mb-4">Mobile</h3>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#" className="flex items-center gap-2 bg-codecademy-dark border border-border-gray rounded-lg px-4 py-2 hover:border-codecademy-yellow transition-colors">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                </svg>
+                <div>
+                  <div className="text-xs text-text-medium-gray">Download on the</div>
+                  <div className="text-sm font-semibold text-white">App Store</div>
+                </div>
+              </a>
+              <a href="#" className="flex items-center gap-2 bg-codecademy-dark border border-border-gray rounded-lg px-4 py-2 hover:border-codecademy-yellow transition-colors">
+                <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L17.49 12l-.792-.792zM5.864 2.271L16.8 8.604 14.498 10.906 5.864 2.27z"/>
+                </svg>
+                <div>
+                  <div className="text-xs text-text-medium-gray">Get it on</div>
+                  <div className="text-sm font-semibold text-white">Google Play</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* Logo and Copyright */}
+          <div className="border-t border-border-gray pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
+                  <Code className="w-5 h-5 text-codecademy-dark" />
+                </div>
+                <span className="text-xl font-bold text-white">
+                  codecademy
+                </span>
+              </div>
+              
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 text-sm">
+                <div className="flex flex-wrap gap-4">
+                  <a href="#" className="hover:text-codecademy-yellow transition-colors">Privacy Policy</a>
+                  <a href="#" className="hover:text-codecademy-yellow transition-colors">Cookie Policy</a>
+                  <a href="#" className="hover:text-codecademy-yellow transition-colors">Do Not Sell My Personal Information</a>
+                  <a href="#" className="hover:text-codecademy-yellow transition-colors">Terms</a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-6 text-center md:text-left text-sm text-text-medium-gray">
+              <p>Made with ❤️ in NYC © 2025 NoolNest</p>
+            </div>
           </div>
         </div>
       </div>
