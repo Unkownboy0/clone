@@ -761,6 +761,7 @@ function App() {
         return (
           <div>
             <HeroSection setCurrentPage={setCurrentPage} />
+            <SkillsSection />
             <PopularCourses 
               setCurrentPage={setCurrentPage} 
               setSelectedCourse={setSelectedCourse}
