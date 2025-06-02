@@ -370,17 +370,32 @@ export const Header = ({ currentPage, setCurrentPage, isMenuOpen, setIsMenuOpen 
             </button>
 
             {/* Events */}
-            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
+            <button 
+              onClick={() => setCurrentPage('events')}
+              className={`text-sm font-medium transition-colors ${
+                currentPage === 'events' ? 'text-white' : 'text-text-light-gray hover:text-white'
+              }`}
+            >
               Events
             </button>
 
             {/* Projects */}
-            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
+            <button 
+              onClick={() => setCurrentPage('projects')}
+              className={`text-sm font-medium transition-colors ${
+                currentPage === 'projects' ? 'text-white' : 'text-text-light-gray hover:text-white'
+              }`}
+            >
               Projects
             </button>
 
             {/* Workspaces */}
-            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
+            <button 
+              onClick={() => setCurrentPage('workspaces')}
+              className={`text-sm font-medium transition-colors ${
+                currentPage === 'workspaces' ? 'text-white' : 'text-text-light-gray hover:text-white'
+              }`}
+            >
               Workspaces
             </button>
 
