@@ -347,6 +347,280 @@ const LessonPage = ({ currentLesson, setCurrentPage, setUserProgress }) => {
   );
 };
 
+// Events Page
+const EventsPage = () => {
+  const events = [
+    {
+      id: 1,
+      title: "Python for Data Science Workshop",
+      date: "Jan 25, 2025",
+      time: "2:00 PM EST",
+      type: "Workshop",
+      description: "Learn essential Python libraries for data analysis and visualization",
+      instructor: "Sarah Chen",
+      duration: "2 hours",
+      level: "Beginner"
+    },
+    {
+      id: 2,
+      title: "JavaScript Fundamentals Live Session",
+      date: "Jan 28, 2025",
+      time: "6:00 PM EST",
+      type: "Live Session",
+      description: "Interactive session covering modern JavaScript ES6+ features",
+      instructor: "Mike Rodriguez",
+      duration: "1.5 hours",
+      level: "Intermediate"
+    },
+    {
+      id: 3,
+      title: "Career Prep: Tech Interview Tips",
+      date: "Feb 2, 2025",
+      time: "4:00 PM EST",
+      type: "Webinar",
+      description: "Expert tips for acing technical interviews at top tech companies",
+      instructor: "Alex Johnson",
+      duration: "1 hour",
+      level: "All Levels"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-codecademy-dark text-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-4">Events</h1>
+          <p className="text-xl text-text-light-gray">
+            Join live sessions, workshops, and webinars with industry experts
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {events.map((event) => (
+            <div key={event.id} className="bg-codecademy-darker border border-border-gray rounded-lg p-6">
+              <div className="mb-4">
+                <span className="bg-codecademy-blue text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  {event.type}
+                </span>
+              </div>
+              
+              <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+              <p className="text-text-medium-gray mb-4">{event.description}</p>
+              
+              <div className="space-y-2 mb-6 text-sm">
+                <div className="flex items-center gap-2 text-text-light-gray">
+                  <Clock className="w-4 h-4" />
+                  <span>{event.date} at {event.time}</span>
+                </div>
+                <div className="flex items-center gap-2 text-text-light-gray">
+                  <User className="w-4 h-4" />
+                  <span>Instructor: {event.instructor}</span>
+                </div>
+                <div className="flex items-center gap-2 text-text-light-gray">
+                  <BookOpen className="w-4 h-4" />
+                  <span>{event.duration} • {event.level}</span>
+                </div>
+              </div>
+              
+              <button className="w-full bg-codecademy-yellow hover:bg-codecademy-yellow-hover text-codecademy-dark font-semibold py-2 px-4 rounded-md transition-colors">
+                Register Now
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Projects Page
+const ProjectsPage = () => {
+  const projects = [
+    {
+      id: 1,
+      title: "Personal Portfolio Website",
+      description: "Build a responsive portfolio website to showcase your projects and skills",
+      difficulty: "Beginner",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      duration: "4-6 hours",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+    },
+    {
+      id: 2,
+      title: "To-Do List App",
+      description: "Create a dynamic to-do list application with local storage",
+      difficulty: "Intermediate",
+      technologies: ["React", "CSS", "Local Storage"],
+      duration: "6-8 hours",
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b"
+    },
+    {
+      id: 3,
+      title: "Data Visualization Dashboard",
+      description: "Build interactive charts and graphs from real datasets",
+      difficulty: "Advanced",
+      technologies: ["Python", "Pandas", "Matplotlib", "Plotly"],
+      duration: "8-10 hours",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+    },
+    {
+      id: 4,
+      title: "E-commerce Website",
+      description: "Full-stack e-commerce platform with shopping cart functionality",
+      difficulty: "Advanced",
+      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      duration: "15-20 hours",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-codecademy-dark text-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-4">Projects</h1>
+          <p className="text-xl text-text-light-gray">
+            Build real-world projects to enhance your portfolio and skills
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <div key={project.id} className="bg-codecademy-darker border border-border-gray rounded-lg overflow-hidden hover:border-codecademy-yellow transition-colors">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              
+              <div className="p-6">
+                <div className="mb-4">
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    project.difficulty === 'Beginner' ? 'bg-codecademy-green text-white' :
+                    project.difficulty === 'Intermediate' ? 'bg-codecademy-orange text-white' :
+                    'bg-codecademy-purple text-white'
+                  }`}>
+                    {project.difficulty}
+                  </span>
+                </div>
+                
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-text-medium-gray mb-4">{project.description}</p>
+                
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-white mb-2">Technologies:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, index) => (
+                      <span key={index} className="bg-codecademy-dark px-2 py-1 rounded text-xs text-text-light-gray">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-sm text-text-medium-gray flex items-center gap-1">
+                    <Clock className="w-4 h-4" />
+                    {project.duration}
+                  </span>
+                </div>
+                
+                <button className="w-full bg-codecademy-yellow hover:bg-codecademy-yellow-hover text-codecademy-dark font-semibold py-2 px-4 rounded-md transition-colors">
+                  Start Project
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Workspaces Page
+const WorkspacesPage = () => {
+  const workspaces = [
+    {
+      id: 1,
+      name: "Python Practice",
+      language: "Python",
+      lastModified: "2 hours ago",
+      description: "Working on data analysis exercises",
+      files: 5
+    },
+    {
+      id: 2,
+      name: "React Portfolio",
+      language: "JavaScript",
+      lastModified: "1 day ago",
+      description: "Building personal portfolio website",
+      files: 12
+    },
+    {
+      id: 3,
+      name: "Machine Learning",
+      language: "Python",
+      lastModified: "3 days ago",
+      description: "Experimenting with ML algorithms",
+      files: 8
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-codecademy-dark text-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-4">Workspaces</h1>
+          <p className="text-xl text-text-light-gray">
+            Code online with our browser-based development environment
+          </p>
+        </div>
+
+        <div className="mb-6">
+          <button className="bg-codecademy-yellow hover:bg-codecademy-yellow-hover text-codecademy-dark font-semibold py-2 px-4 rounded-md transition-colors">
+            Create New Workspace
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {workspaces.map((workspace) => (
+            <div key={workspace.id} className="bg-codecademy-darker border border-border-gray rounded-lg p-6 hover:border-codecademy-yellow transition-colors cursor-pointer">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-bold mb-1">{workspace.name}</h3>
+                  <p className="text-text-medium-gray text-sm">{workspace.description}</p>
+                </div>
+                <div className="w-8 h-8 bg-codecademy-blue rounded flex items-center justify-center">
+                  <Code className="w-4 h-4 text-white" />
+                </div>
+              </div>
+              
+              <div className="space-y-2 text-sm text-text-light-gray">
+                <div className="flex items-center justify-between">
+                  <span>Language:</span>
+                  <span className="text-white">{workspace.language}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Files:</span>
+                  <span className="text-white">{workspace.files}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Last modified:</span>
+                  <span className="text-white">{workspace.lastModified}</span>
+                </div>
+              </div>
+              
+              <button className="w-full mt-4 bg-codecademy-dark border border-border-gray text-white font-medium py-2 px-4 rounded-md hover:bg-codecademy-yellow hover:text-codecademy-dark transition-colors">
+                Open Workspace
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Certificate Page
 const CertificatePage = ({ currentLesson, setCurrentPage }) => {
   const course = currentLesson?.course;
