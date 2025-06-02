@@ -263,8 +263,12 @@ const testimonials = [
   }
 ];
 
-// Header Component - Dark Theme
+// Header Component - Complete Codecademy Style
 export const Header = ({ currentPage, setCurrentPage, isMenuOpen, setIsMenuOpen }) => {
+  const [showCatalogDropdown, setShowCatalogDropdown] = useState(false);
+  const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
+  const [showPlansDropdown, setShowPlansDropdown] = useState(false);
+
   return (
     <header className="bg-codecademy-dark border-b border-border-gray sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -285,41 +289,115 @@ export const Header = ({ currentPage, setCurrentPage, isMenuOpen, setIsMenuOpen 
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
+            {/* My Home */}
+            <button 
+              onClick={() => setCurrentPage('home')}
+              className={`text-sm font-medium transition-colors flex items-center gap-1 ${
+                currentPage === 'home' ? 'text-white' : 'text-text-light-gray hover:text-white'
+              }`}
+            >
+              <Home className="w-4 h-4" />
+              My Home
+            </button>
+
+            {/* Catalog Dropdown */}
             <div className="relative group">
-              <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium flex items-center gap-1">
+              <button 
+                className="text-text-light-gray hover:text-white transition-colors text-sm font-medium flex items-center gap-1"
+                onMouseEnter={() => setShowCatalogDropdown(true)}
+                onMouseLeave={() => setShowCatalogDropdown(false)}
+              >
                 Catalog
                 <ChevronDown className="w-4 h-4" />
               </button>
+              
+              {showCatalogDropdown && (
+                <div 
+                  className="absolute top-full left-0 mt-2 w-80 bg-codecademy-darker border border-border-gray rounded-lg shadow-lg py-4 z-50"
+                  onMouseEnter={() => setShowCatalogDropdown(true)}
+                  onMouseLeave={() => setShowCatalogDropdown(false)}
+                >
+                  <div className="px-4 py-2">
+                    <h3 className="text-white font-semibold mb-3">Browse by subject</h3>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <a href="#" className="text-text-light-gray hover:text-codecademy-yellow py-1">Web Development</a>
+                      <a href="#" className="text-text-light-gray hover:text-codecademy-yellow py-1">Data Science</a>
+                      <a href="#" className="text-text-light-gray hover:text-codecademy-yellow py-1">Computer Science</a>
+                      <a href="#" className="text-text-light-gray hover:text-codecademy-yellow py-1">Developer Tools</a>
+                      <a href="#" className="text-text-light-gray hover:text-codecademy-yellow py-1">Machine Learning</a>
+                      <a href="#" className="text-text-light-gray hover:text-codecademy-yellow py-1">Code Foundations</a>
+                    </div>
+                    <div className="border-t border-border-gray mt-3 pt-3">
+                      <button 
+                        onClick={() => {
+                          setCurrentPage('courses');
+                          setShowCatalogDropdown(false);
+                        }}
+                        className="text-codecademy-yellow hover:text-codecademy-yellow-hover text-sm font-medium"
+                      >
+                        View full catalog →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
-              Resources
-            </button>
-            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
-              Community
-            </button>
-            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
-              Pricing
-            </button>
-            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
-              Career Center
-            </button>
-            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
-              For Business
-            </button>
-            <div className="flex items-center space-x-3">
-              <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
-                Log In
-              </button>
-              <button className="bg-codecademy-yellow hover:bg-codecademy-yellow-hover text-codecademy-dark px-4 py-2 rounded-md font-semibold text-sm transition-colors">
-                Sign Up
-              </button>
+
+            {/* Search Bar */}
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-medium-gray w-4 h-4" />
+              <input
+                type="text"
+                placeholder="Search..."
+                className="bg-codecademy-darker border border-border-gray text-white pl-10 pr-4 py-2 rounded-md text-sm focus:outline-none focus:border-codecademy-yellow w-64"
+              />
             </div>
+
+            {/* Dashboard */}
+            <button 
+              onClick={() => setCurrentPage('dashboard')}
+              className={`text-sm font-medium transition-colors ${
+                currentPage === 'dashboard' ? 'text-white' : 'text-text-light-gray hover:text-white'
+              }`}
+            >
+              Dashboard
+            </button>
+
+            {/* My Learning */}
+            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
+              My learning
+            </button>
+
+            {/* Events */}
+            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
+              Events
+            </button>
+
+            {/* Projects */}
+            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
+              Projects
+            </button>
+
+            {/* Workspaces */}
+            <button className="text-text-light-gray hover:text-white transition-colors text-sm font-medium">
+              Workspaces
+            </button>
+
+            {/* Upgrade Button */}
+            <button className="bg-codecademy-yellow hover:bg-codecademy-yellow-hover text-codecademy-dark px-4 py-2 rounded-md font-semibold text-sm transition-colors">
+              Upgrade
+            </button>
+
+            {/* Profile */}
+            <button className="w-8 h-8 bg-codecademy-purple rounded-full flex items-center justify-center">
+              <User className="w-4 h-4 text-white" />
+            </button>
           </nav>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-white"
+            className="lg:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -338,9 +416,19 @@ export const Header = ({ currentPage, setCurrentPage, isMenuOpen, setIsMenuOpen 
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-codecademy-dark border-t border-border-gray"
+            className="lg:hidden bg-codecademy-dark border-t border-border-gray"
           >
             <div className="px-4 py-2 space-y-1">
+              <button
+                onClick={() => {
+                  setCurrentPage('home');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white flex items-center gap-2"
+              >
+                <Home className="w-4 h-4" />
+                My Home
+              </button>
               <button
                 onClick={() => {
                   setCurrentPage('courses');
@@ -359,17 +447,20 @@ export const Header = ({ currentPage, setCurrentPage, isMenuOpen, setIsMenuOpen 
               >
                 Dashboard
               </button>
-              <button
-                onClick={() => {
-                  setCurrentPage('about');
-                  setIsMenuOpen(false);
-                }}
-                className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white"
-              >
-                About
+              <button className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white">
+                My learning
+              </button>
+              <button className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white">
+                Events
+              </button>
+              <button className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white">
+                Projects
+              </button>
+              <button className="block w-full text-left px-3 py-2 text-text-light-gray hover:text-white">
+                Workspaces
               </button>
               <button className="w-full bg-codecademy-yellow text-codecademy-dark px-4 py-2 rounded-md font-semibold hover:bg-codecademy-yellow-hover transition-colors">
-                Sign Up
+                Upgrade
               </button>
             </div>
           </motion.div>
