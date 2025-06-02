@@ -29,7 +29,7 @@ import {
   BarChart3
 } from 'lucide-react';
 
-// Course Detail Page
+// Course Detail Page - Dark Theme
 const CourseDetailPage = ({ course, setCurrentPage, setCurrentLesson }) => {
   const [enrollmentComplete, setEnrollmentComplete] = useState(false);
 
@@ -40,33 +40,29 @@ const CourseDetailPage = ({ course, setCurrentPage, setCurrentLesson }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-blue-dianne text-white">
+    <div className="min-h-screen bg-codecademy-dark text-white">
+      <div className="bg-codecademy-darker">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <button
             onClick={() => setCurrentPage('courses')}
-            className="flex items-center gap-2 text-gray-300 hover:text-white mb-6 transition-colors"
+            className="flex items-center gap-2 text-text-medium-gray hover:text-white mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Courses
+            Back to Catalog
           </button>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="mb-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                  course.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
-                  course.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
-                  'bg-red-100 text-red-800'
-                }`}>
-                  {course.difficulty}
+                <span className="text-xs text-codecademy-yellow font-semibold uppercase tracking-wide">
+                  {course.category}
                 </span>
               </div>
               
               <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
-              <p className="text-xl text-gray-300 mb-6">{course.description}</p>
+              <p className="text-xl text-text-light-gray mb-6">{course.description}</p>
               
-              <div className="flex flex-wrap gap-6 mb-8 text-sm">
+              <div className="flex flex-wrap gap-6 mb-8 text-sm text-text-medium-gray">
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />
                   <span>{course.duration}</span>
@@ -76,14 +72,14 @@ const CourseDetailPage = ({ course, setCurrentPage, setCurrentLesson }) => {
                   <span>{course.lessons} lessons</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  <Star className="w-4 h-4 fill-codecademy-yellow text-codecademy-yellow" />
                   <span>{course.rating} ({course.enrolled.toLocaleString()} students)</span>
                 </div>
               </div>
               
               <button
                 onClick={handleStartCourse}
-                className="bg-carnation text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-600 transition-colors flex items-center gap-2"
+                className="bg-codecademy-yellow hover:bg-codecademy-yellow-hover text-codecademy-dark px-8 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"
               >
                 <PlayCircle className="w-5 h-5" />
                 Start Learning for Free
@@ -107,19 +103,19 @@ const CourseDetailPage = ({ course, setCurrentPage, setCurrentLesson }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">What you'll learn</h2>
+            <h2 className="text-2xl font-bold mb-6">What you'll learn</h2>
             <div className="space-y-3 mb-12">
               {course.curriculum.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">{item}</span>
+                  <CheckCircle className="w-5 h-5 text-codecademy-green mt-1 flex-shrink-0" />
+                  <span className="text-text-light-gray">{item}</span>
                 </div>
               ))}
             </div>
             
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Course Preview</h3>
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center mb-4">
+            <h3 className="text-xl font-bold mb-4">Course Preview</h3>
+            <div className="bg-codecademy-darker rounded-lg border border-border-gray p-6">
+              <div className="aspect-video bg-black rounded-lg flex items-center justify-center mb-4">
                 <iframe
                   src={course.videoUrl}
                   title={course.title}
@@ -127,38 +123,38 @@ const CourseDetailPage = ({ course, setCurrentPage, setCurrentLesson }) => {
                   allowFullScreen
                 ></iframe>
               </div>
-              <p className="text-gray-600">
+              <p className="text-text-medium-gray">
                 Get a preview of what you'll learn in this {course.lessons}-lesson course.
               </p>
             </div>
           </div>
           
           <div>
-            <div className="bg-white rounded-lg shadow-sm p-6 sticky top-24">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Course includes:</h3>
-              <ul className="space-y-3 text-sm text-gray-600">
+            <div className="bg-codecademy-darker rounded-lg border border-border-gray p-6 sticky top-24">
+              <h3 className="text-lg font-bold mb-4">Course includes:</h3>
+              <ul className="space-y-3 text-sm text-text-medium-gray">
                 <li className="flex items-center gap-3">
-                  <PlayCircle className="w-4 h-4 text-carnation" />
+                  <PlayCircle className="w-4 h-4 text-codecademy-yellow" />
                   {course.lessons} video lessons
                 </li>
                 <li className="flex items-center gap-3">
-                  <BookOpen className="w-4 h-4 text-carnation" />
+                  <BookOpen className="w-4 h-4 text-codecademy-yellow" />
                   Interactive exercises
                 </li>
                 <li className="flex items-center gap-3">
-                  <Award className="w-4 h-4 text-carnation" />
+                  <Award className="w-4 h-4 text-codecademy-yellow" />
                   Certificate of completion
                 </li>
                 <li className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-carnation" />
+                  <Clock className="w-4 h-4 text-codecademy-yellow" />
                   Lifetime access
                 </li>
               </ul>
               
-              <div className="mt-6 pt-6 border-t">
+              <div className="mt-6 pt-6 border-t border-border-gray">
                 <div className="text-center">
-                  <span className="text-2xl font-bold text-carnation">FREE</span>
-                  <p className="text-sm text-gray-600 mt-1">No credit card required</p>
+                  <span className="text-2xl font-bold text-codecademy-yellow">FREE</span>
+                  <p className="text-sm text-text-medium-gray mt-1">No credit card required</p>
                 </div>
               </div>
             </div>
