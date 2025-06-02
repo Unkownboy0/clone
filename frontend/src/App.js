@@ -777,6 +777,12 @@ function App() {
             setSelectedCourse={setSelectedCourse}
           />
         );
+      case 'events':
+        return <EventsPage />;
+      case 'projects':
+        return <ProjectsPage />;
+      case 'workspaces':
+        return <WorkspacesPage />;
       case 'course-detail':
         return selectedCourse ? (
           <CourseDetailPage 
