@@ -460,7 +460,7 @@ const CertificatePage = ({ currentLesson, setCurrentPage }) => {
   );
 };
 
-// Courses Page
+// Courses Page - Dark Theme
 const CoursesPage = ({ setCurrentPage, setSelectedCourse }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -481,11 +481,11 @@ const CoursesPage = ({ setCurrentPage, setSelectedCourse }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-codecademy-dark text-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">All Courses</h1>
-          <p className="text-xl text-gray-600">
+          <h1 className="text-3xl font-bold mb-4">Catalog</h1>
+          <p className="text-xl text-text-light-gray">
             Choose from {mockCourses.length} courses to start your coding journey
           </p>
         </div>
@@ -499,7 +499,7 @@ const CoursesPage = ({ setCurrentPage, setSelectedCourse }) => {
           setSelectedDifficulty={setSelectedDifficulty}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredCourses.map((course) => (
             <CourseCard 
               key={course.id} 
@@ -511,7 +511,7 @@ const CoursesPage = ({ setCurrentPage, setSelectedCourse }) => {
 
         {filteredCourses.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500">No courses found matching your criteria.</p>
+            <p className="text-text-medium-gray">No courses found matching your criteria.</p>
           </div>
         )}
       </div>
