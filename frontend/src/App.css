@@ -1,54 +1,105 @@
-/* Custom CSS for Codecademy Clone */
+/* Real Codecademy Colors and Styles */
 
-/* Color Variables */
+/* Color Variables - Matching Real Codecademy */
 :root {
-  --carnation: #f65a5b;
-  --blue-dianne: #204056;
-  --hover-carnation: #e54849;
+  --codecademy-dark: #0a0e27;
+  --codecademy-darker: #050920;
+  --codecademy-yellow: #FFD23F;
+  --codecademy-yellow-hover: #FFBE0B;
+  --codecademy-blue: #646CFF;
+  --codecademy-purple: #8E44EC;
+  --codecademy-green: #4CAF50;
+  --codecademy-pink: #FF6B9D;
+  --codecademy-orange: #FF8C42;
+  --text-light-gray: #B8BCC8;
+  --text-medium-gray: #9CA0AB;
+  --text-dark-gray: #1F2937;
+  --border-gray: #2D3748;
 }
 
 /* Global Styles */
 .App {
   text-align: left;
+  background-color: var(--codecademy-dark);
+  color: white;
 }
 
 /* Typography */
-.font-codin {
-  font-family: 'Inter', 'DIN Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+.font-codecademy {
+  font-family: 'Inter', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Custom Tailwind Colors */
-.text-carnation {
-  color: var(--carnation);
+.text-codecademy-yellow {
+  color: var(--codecademy-yellow);
 }
 
-.text-blue-dianne {
-  color: var(--blue-dianne);
+.text-codecademy-blue {
+  color: var(--codecademy-blue);
 }
 
-.bg-carnation {
-  background-color: var(--carnation);
+.text-codecademy-purple {
+  color: var(--codecademy-purple);
 }
 
-.bg-blue-dianne {
-  background-color: var(--blue-dianne);
+.text-light-gray {
+  color: var(--text-light-gray);
 }
 
-.border-carnation {
-  border-color: var(--carnation);
+.text-medium-gray {
+  color: var(--text-medium-gray);
 }
 
-.border-blue-dianne {
-  border-color: var(--blue-dianne);
+.bg-codecademy-dark {
+  background-color: var(--codecademy-dark);
 }
 
-.hover\:bg-carnation:hover {
-  background-color: var(--hover-carnation);
+.bg-codecademy-darker {
+  background-color: var(--codecademy-darker);
+}
+
+.bg-codecademy-yellow {
+  background-color: var(--codecademy-yellow);
+  color: var(--codecademy-dark);
+}
+
+.bg-codecademy-blue {
+  background-color: var(--codecademy-blue);
+}
+
+.bg-codecademy-purple {
+  background-color: var(--codecademy-purple);
+}
+
+.bg-codecademy-green {
+  background-color: var(--codecademy-green);
+}
+
+.bg-codecademy-pink {
+  background-color: var(--codecademy-pink);
+}
+
+.bg-codecademy-orange {
+  background-color: var(--codecademy-orange);
+}
+
+.border-codecademy-gray {
+  border-color: var(--border-gray);
+}
+
+.hover\:bg-codecademy-yellow-hover:hover {
+  background-color: var(--codecademy-yellow-hover);
 }
 
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+  background-color: var(--codecademy-dark);
+}
+
+body {
+  background-color: var(--codecademy-dark);
+  color: white;
 }
 
 /* Custom Animations */
@@ -76,14 +127,17 @@ html {
   line-height: 1.5;
 }
 
-/* Course Card Hover Effects */
+/* Course Card Hover Effects - Dark Theme */
 .course-card {
   transition: all 0.3s ease;
+  background-color: #1a1b23;
+  border: 1px solid var(--border-gray);
 }
 
 .course-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  border-color: var(--codecademy-blue);
 }
 
 /* Progress Bar Animation */
@@ -110,8 +164,8 @@ html {
 /* Certificate Styles */
 .certificate {
   background: linear-gradient(45deg, #ffffff 0%, #f9f9f9 100%);
-  border: 4px solid var(--carnation);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--codecademy-yellow);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Interactive Elements */
@@ -142,43 +196,61 @@ html {
   }
 }
 
-/* Responsive Design Enhancements */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.25rem;
-  }
+/* Hero Section - Dark Theme */
+.hero-dark {
+  background: linear-gradient(135deg, var(--codecademy-dark) 0%, var(--codecademy-darker) 100%);
 }
 
-/* Course Progress Indicators */
-.lesson-complete {
-  background-color: #22c55e;
+/* Course Badge Styles */
+.badge-data-science {
+  background-color: var(--codecademy-purple);
   color: white;
 }
 
-.lesson-current {
-  background-color: var(--carnation);
+.badge-web-development {
+  background-color: var(--codecademy-blue);
   color: white;
 }
 
-.lesson-upcoming {
-  background-color: #f3f4f6;
-  color: #6b7280;
+.badge-programming {
+  background-color: var(--codecademy-green);
+  color: white;
 }
 
-/* Testimonial Cards */
-.testimonial-card {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.95);
+.badge-mobile-development {
+  background-color: var(--codecademy-pink);
+  color: white;
 }
 
-/* Navigation Enhancements */
+.badge-beginner {
+  background-color: var(--codecademy-green);
+  color: white;
+}
+
+.badge-intermediate {
+  background-color: var(--codecademy-orange);
+  color: white;
+}
+
+.badge-advanced {
+  background-color: var(--codecademy-purple);
+  color: white;
+}
+
+/* Navigation Enhancements - Dark Theme */
+.nav-dark {
+  background-color: var(--codecademy-dark);
+  border-bottom: 1px solid var(--border-gray);
+}
+
 .nav-link {
   position: relative;
   transition: color 0.3s ease;
+  color: var(--text-light-gray);
+}
+
+.nav-link:hover {
+  color: white;
 }
 
 .nav-link::after {
@@ -188,7 +260,7 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--carnation);
+  background-color: var(--codecademy-yellow);
   transition: width 0.3s ease;
 }
 
@@ -197,85 +269,199 @@ html {
   width: 100%;
 }
 
-/* Footer Enhancements */
+/* Footer Enhancements - Dark Theme */
+.footer-dark {
+  background-color: var(--codecademy-darker);
+  border-top: 1px solid var(--border-gray);
+}
+
 .footer-link {
   transition: color 0.3s ease;
+  color: var(--text-medium-gray);
 }
 
 .footer-link:hover {
-  color: var(--carnation);
+  color: var(--codecademy-yellow);
 }
 
-/* Course Filter Styles */
-.filter-active {
-  background-color: var(--carnation);
-  color: white;
+/* Skills Grid - Matching Real Codecademy */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
-/* Dashboard Stats Cards */
-.stats-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border-left: 4px solid var(--carnation);
+.skill-card {
+  background-color: #1a1b23;
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* Custom Scrollbar */
+.skill-card:hover {
+  border-color: var(--codecademy-yellow);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar - Dark Theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--codecademy-darker);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--carnation);
+  background: var(--codecademy-yellow);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--hover-carnation);
+  background: var(--codecademy-yellow-hover);
 }
 
 /* Accessibility Improvements */
-.focus\:ring-carnation:focus {
-  --tw-ring-color: var(--carnation);
+.focus\:ring-codecademy-yellow:focus {
+  --tw-ring-color: var(--codecademy-yellow);
 }
 
-.focus\:border-carnation:focus {
-  border-color: var(--carnation);
+.focus\:border-codecademy-yellow:focus {
+  border-color: var(--codecademy-yellow);
 }
 
-/* Print Styles for Certificates */
-@media print {
-  .certificate {
-    box-shadow: none;
-    border: 2px solid var(--carnation);
+/* Course Grid Layout */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Search and Filter Styles */
+.search-filter-dark {
+  background-color: #1a1b23;
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+}
+
+.filter-button {
+  background-color: transparent;
+  border: 1px solid var(--border-gray);
+  color: var(--text-light-gray);
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+  border-color: var(--codecademy-yellow);
+  color: white;
+}
+
+.filter-button.active {
+  background-color: var(--codecademy-yellow);
+  border-color: var(--codecademy-yellow);
+  color: var(--codecademy-dark);
+}
+
+/* Learning Path Cards */
+.learning-path-card {
+  background: linear-gradient(135deg, #1a1b23 0%, #2a2b33 100%);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Stats Cards */
+.stats-card {
+  background: linear-gradient(135deg, #1a1b23 0%, #2a2b33 100%);
+  border-left: 4px solid var(--codecademy-yellow);
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
   }
   
-  .no-print {
-    display: none;
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Course Curriculum Sidebar */
-.curriculum-sidebar {
-  max-height: calc(100vh - 200px);
-  overflow-y: auto;
+/* Course Progress Indicators */
+.lesson-complete {
+  background-color: var(--codecademy-green);
+  color: white;
 }
 
-/* Lesson Video Overlay */
-.video-overlay {
-  background: linear-gradient(45deg, rgba(32, 64, 86, 0.8), rgba(246, 90, 91, 0.8));
+.lesson-current {
+  background-color: var(--codecademy-yellow);
+  color: var(--codecademy-dark);
 }
 
-/* Interactive Code Examples */
+.lesson-upcoming {
+  background-color: #2a2b33;
+  color: var(--text-medium-gray);
+  border: 1px solid var(--border-gray);
+}
+
+/* Testimonial Cards - Dark Theme */
+.testimonial-card {
+  background: linear-gradient(135deg, #1a1b23 0%, #2a2b33 100%);
+  border: 1px solid var(--border-gray);
+}
+
+/* Mobile Menu Animations */
+.mobile-menu-dark {
+  background-color: var(--codecademy-dark);
+  border-top: 1px solid var(--border-gray);
+}
+
+/* Button Styles - Matching Real Codecademy */
+.btn-primary {
+  background-color: var(--codecademy-yellow);
+  color: var(--codecademy-dark);
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--codecademy-yellow-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid var(--border-gray);
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--codecademy-yellow);
+  color: var(--codecademy-yellow);
+}
+
+/* Code Syntax Highlighting */
 .code-example {
   background: #1e1e1e;
   border-radius: 8px;
   padding: 1rem;
   font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
   color: #d4d4d4;
-  border-left: 4px solid var(--carnation);
+  border-left: 4px solid var(--codecademy-yellow);
 }
 
 .code-example .comment {
@@ -290,29 +476,10 @@ html {
   color: #ce9178;
 }
 
-/* Hero Section Enhancements */
-.hero-background {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Course Category Tags */
-.category-tag {
-  background: linear-gradient(135deg, var(--carnation), #ff7b7c);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 /* Achievement Badges */
 .achievement-badge {
-  background: linear-gradient(135deg, #ffd700, #ffed4e);
-  color: #92400e;
+  background: linear-gradient(135deg, var(--codecademy-yellow), #ffed4e);
+  color: var(--codecademy-dark);
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -320,28 +487,39 @@ html {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 210, 63, 0.3);
 }
 
-/* Mobile Menu Animations */
-.mobile-menu-enter {
-  opacity: 0;
-  transform: translateY(-10px);
+/* Input Styles */
+input[type="text"], 
+input[type="email"], 
+select {
+  background-color: #1a1b23;
+  border: 1px solid var(--border-gray);
+  color: white;
+  border-radius: 6px;
 }
 
-.mobile-menu-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.3s ease;
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+select:focus {
+  outline: none;
+  border-color: var(--codecademy-yellow);
+  box-shadow: 0 0 0 2px rgba(255, 210, 63, 0.2);
 }
 
-.mobile-menu-exit {
-  opacity: 1;
-  transform: translateY(0);
+/* Loading States */
+.loading-skeleton {
+  background: linear-gradient(90deg, #1a1b23 25%, #2a2b33 50%, #1a1b23 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
 }
 
-.mobile-menu-exit-active {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
